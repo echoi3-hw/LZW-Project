@@ -45,9 +45,9 @@ public class Encoder
 			PrintWriter writer = new PrintWriter(new FileWriter(fileName  + "encoded"));
 
 
-			for (int i=0; i<95; i++)
+			for (int i=0; i<=127; i++)
 			{
-				table.add(""+(char)(i+32)); //inputs values into table that are already in the ascii table; began at 33rd character to avoid weird chars
+				table.add(""+(char)(i)); //inputs values into table that are already in the ascii table; began at 33rd character to avoid weird chars
 			}
 
 
