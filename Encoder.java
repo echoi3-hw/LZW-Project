@@ -1,5 +1,6 @@
 
 import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  */
 
 
-public class Encoder
+public class LZWEncoder
 
 {
 
@@ -30,7 +31,7 @@ public class Encoder
 	private char readchar = 0; //this will represent the last char when checking a substring
 
 	//empty constructor
-	public Encoder () 
+	public LZWEncoder () 
 	{
 	}
 
@@ -66,13 +67,13 @@ public class Encoder
 				else {
 					if (prefix.length()==1) { //checks if it is in ascii table as a single letter
 						code.add((int)pattern.charAt(0)); //adds the index to the list of codes
-						writer.print((int)pattern.charAt(0) + ","); //prints the code of this pattern
+						writer.print((int)pattern.charAt(0) + " "); //prints the code of this pattern
 					}
 
 					else//if the pattern is not in table, it adds it to the table. also print this pattern
 					{
-						code.add (33+table.indexOf(prefix)); //adds value of everything but last letter to code
-						writer.print(33+table.indexOf(prefix) +","); //prints the code of this pattern
+						code.add (table.indexOf(prefix)); //adds value of everything but last letter to code
+						writer.print(table.indexOf(prefix) +" "); //prints the code of this pattern
 					}
 					
 					prefix = "" + readchar; // resets with only the last char of the sequence
