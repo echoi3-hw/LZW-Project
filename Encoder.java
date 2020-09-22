@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 
 
-public class LZWEncoder
+public class Encoder
 
 {
 
@@ -31,7 +31,7 @@ public class LZWEncoder
 	private char readchar = 0; //this will represent the last char when checking a substring
 
 	//empty constructor
-	public LZWEncoder () 
+	public Encoder () 
 	{
 	}
 
